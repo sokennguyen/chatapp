@@ -1,10 +1,10 @@
 import NavHeader from "./NavHeader"
 import ChatHeader from "./ChatHeader"
 
-const Header = (props) => {
+const Header = ({user,chat}) => {
     return <div className="header">
-        <NavHeader userId={props.userId}/>
-        <ChatHeader chatId={props.chatId}/>
+        <NavHeader user={user}/>
+        <ChatHeader user={user} chat={chat}/>
     </div>
 }
 

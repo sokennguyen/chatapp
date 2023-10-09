@@ -1,8 +1,10 @@
 import Avatar from "../misc/Avatar"
+import avatarRouter from "../../services/avatar"
 
-const ChatHeader = ({chatId}) =>{
+const ChatHeader = ({user,chat}) =>{
+    const id = avatarRouter(user,chat)
     return <div className="chat-header">
-        <Avatar userId={chatId}/>
+        <Avatar id={id}/>
     </div>
 }
 

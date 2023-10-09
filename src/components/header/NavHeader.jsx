@@ -1,8 +1,7 @@
 import Avatar from "../misc/Avatar"
-
-const NavHeader = ({userId}) =>{
+const NavHeader = ({user,chat}) =>{
     return <div className="nav-header">
-        <Avatar userId={userId}/>
+        <Avatar id={user.id}/>
     </div>
 }
 
