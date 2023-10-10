@@ -1,5 +1,5 @@
 const ChatName = ({chatName}) =>  {
-    return <div className="chat-name">{chatName}</div>
+    return <div className="card-name">{chatName}</div>
 }
 
 export default ChatName

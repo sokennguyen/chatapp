@@ -5,11 +5,16 @@ import Read from "./Read"
 
 const Card = ({chat,isActive,isRead}) => {
     return (
-        <div>
+        <div className="card">
             <ChatAvatar id={chat.avatar}/>
-            <ChatName chatName={chat.name}/>
-            <LatestChat latestChat={chat.messages[chat.messages.length-1].content}/>
-            <Read isRead={isRead}/>
+            <div className="card-main">
+                <ChatName chatName={chat.name}/>            
+                <div className="card-content">
+                    <LatestChat latestChat={chat.messages[chat.messages.length-1].content}/>
+                    <Read isRead={isRead}/>    
+                </div>
+            </div>
+            
             {/* <Time chat={chat.message[message.length].time}/> */}
         </div>
     )
