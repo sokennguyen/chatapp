@@ -1,10 +1,8 @@
+import { Avatar } from "@mui/material"
+
 const ChatAvatar = ({id}) => {
     const imgLink = `/avatar/${id}.png`
-    return <>
-        <a href="#">
-            <img className="card-avatar" src={imgLink} alt="user avatar" />
-        </a>
-    </>
+    return <Avatar src={imgLink} alt="user avatar"/>
 }
 
 export default ChatAvatar
