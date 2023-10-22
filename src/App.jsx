@@ -48,6 +48,36 @@ function App() {
           sentBy: 1,
           readBy: [2],
         },
+        {
+          content: 'second peer message',
+          sentBy: 1,
+          readBy: [2],
+        },
+        {
+          content: 'second peer message',
+          sentBy: 1,
+          readBy: [2],
+        },
+        {
+          content: 'second peer message',
+          sentBy: 1,
+          readBy: [2],
+        },
+        {
+          content: 'second peer message',
+          sentBy: 1,
+          readBy: [2],
+        },
+        {
+          content: 'second peer message',
+          sentBy: 1,
+          readBy: [2],
+        },
+        {
+          content: 'second peer message',
+          sentBy: 1,
+          readBy: [2],
+        },
       ],
     },
     // Add more chat objects here
@@ -166,12 +196,13 @@ function App() {
   ])
   
   const [activeChat,setActiveChat] = useState(2)
+
   return (
-      <Grid container sx={{height:'100vh'}}>
+      <Grid container sx={{width:'100vw'}}>
         <Grid item sx={{minWidth:'350px'}} xs={3}>
-          <Navigation user={user} chats={userChats} activeChat={activeChat}/>
+          <Navigation user={user} chats={userChats} activeChat={activeChat} setActiveChat={setActiveChat}/>
         </Grid>
-        <Grid item sx={{minWidth:'450px'}} xs>
+        <Grid item xs>
           <ChatView user={user} chat={userChats.find(chat=>chat.id===activeChat)}/>
         </Grid>
       </Grid>

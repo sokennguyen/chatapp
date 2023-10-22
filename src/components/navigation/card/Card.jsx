@@ -1,30 +1,31 @@
-import { Avatar, Grid, ListItem, ListItemIcon } from "@mui/material"
+import { Avatar, Box, Button, Grid, ListItem, ListItemButton, ListItemIcon } from "@mui/material"
 import ChatAvatar from "./ChatAvatar"
 import ChatName from "./ChatName"
 import LatestChat from "./LatestChat"
 import Read from "./Read"
 
-const Card = ({chat,isActive,isRead}) => {
+const Card = ({chat,isActive,isRead,setActiveChat}) => {
     return (
-        <ListItem>
-            <ListItemIcon>
-                <ChatAvatar id={chat.avatar}/>
-            </ListItemIcon>
-            <Grid container>
-                <Grid item xs={10}>
-                    <ChatName chatName={chat.name}/>
-                </Grid>
-                <Grid item xs={2}>
-                    date
-                </Grid>
-                <Grid item xs={1}>
-                    <Read isRead={isRead}/>  
-                </Grid>
-                <Grid item xs={11}>
-                    <LatestChat latestChat={chat.messages[chat.messages.length-1].content}/>
-                </Grid>
-            </Grid>
-            
+        <ListItem >
+                <ListItemButton onClick={()=>setActiveChat(chat.id)} selected={isActive} dense={true} disableGutters divider={true} variant="text">
+                    <ListItemIcon>
+                        <ChatAvatar id={chat.avatar}/>
+                    </ListItemIcon>
+                    <Grid container>
+                        <Grid item xs={10}>
+                            <ChatName chatName={chat.name}/>
+                        </Grid>
+                        <Grid item xs={2}>
+                            date
+                        </Grid>
+                        <Grid item xs={1}>
+                            <Read isRead={isRead}/>  
+                        </Grid>
+                        <Grid item xs={11}>
+                            <LatestChat latestChat={chat.messages[chat.messages.length-1].content}/>
+                        </Grid>
+                    </Grid>
+                </ListItemButton>
         </ListItem>
     )
     // <div className="card">

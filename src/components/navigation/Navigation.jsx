@@ -1,15 +1,13 @@
-import { List, ListItem } from "@mui/material"
+import { List, ListItem, Box } from "@mui/material"
 import NavHeader from "./NavHeader"
 import NavHistory from "./NavHistory"
 
-const Navigation = ({user,chats,activeChat}) => {
+const Navigation = ({user,chats,activeChat,setActiveChat}) => {
     return (
-        <List className="nav-view">
+        <div className="nav-view">
             <NavHeader user={user}/>
-            <ListItem>
-                <NavHistory chats={chats} activeChat={activeChat}/>
-            </ListItem>
-        </List>
+            <NavHistory chats={chats} activeChat={activeChat} setActiveChat={setActiveChat}/>
+        </div>
     )
 }
 
